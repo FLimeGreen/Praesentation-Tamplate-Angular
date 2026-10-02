@@ -6,6 +6,14 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Using this Template it is easy to generate Web Praesentations.
 
+## new Praesentation Script
+
+Use this to generate a new Praesentation lokally.
+
+```bash
+./neue-praesentation.sh <name> [zielordner]
+```
+
 ## Development server
 
 To start a local development server, run:
