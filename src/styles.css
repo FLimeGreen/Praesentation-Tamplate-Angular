@@ -1,3 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'tailwindcss';
+@import "tailwindcss";
+
+/* Farbpalette: leicht dunkel, nicht reines Schwarz */
+@theme {
+  --color-bg: #1a1d24;
+  --color-surface: #232831;
+  --color-border: #343b48;
+  --color-text: #e6e9ef;
+  --color-muted: #9aa3b2;
+  --color-accent: #6ea8fe;
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", Menlo, monospace;
+}
+
+@layer base {
+  html, body {
+    @apply h-full m-0 bg-bg text-text font-sans antialiased;
+  }
+
+  h1 { @apply text-6xl font-bold tracking-tight mb-6; }
+  h2 { @apply text-4xl font-semibold mb-4 text-accent; }
+  h3 { @apply text-2xl font-semibold mb-3; }
+
+  p, li { @apply text-3xl leading-relaxed text-text; }
+  ul { @apply list-disc pl-8 space-y-3; }
+  ol { @apply list-decimal pl-8 space-y-3; }
+
+  a { @apply text-accent underline underline-offset-4 hover:opacity-80; }
+
+  blockquote {
+    @apply border-l-4 border-accent pl-6 italic text-muted text-3xl;
+  }
+
+  code {
+    @apply bg-surface border border-border rounded px-2 py-0.5 font-mono text-[0.85em];
+  }
+  pre {
+    @apply bg-surface border border-border rounded-lg p-6 overflow-x-auto text-2xl;
+  }
+  pre code { @apply bg-transparent border-0 p-0; }
+
+  ::selection { @apply bg-accent/30; }
+}
+
+/* Jede Folie (direkt nach dem router-outlet) füllt den Bildschirm */
+@layer components {
+  router-outlet + * {
+    @apply flex flex-col justify-center h-screen px-[10vw] box-border;
+  }
+}
