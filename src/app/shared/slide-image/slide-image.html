@@ -1,0 +1,10 @@
+<img
+  [src]="src()"
+  [alt]="alt()"
+  class="fixed object-contain drop-shadow-2xl"
+  [class.object-right]="!custom()"
+  [style.left.%]="x() ?? 60"
+  [style.top.%]="y() ?? 7.5"
+  [style.width.%]="width() ?? 40"
+  [style.height.%]="height() ?? 85"
+/>

@@ -50,4 +50,8 @@
   router-outlet + * {
     @apply flex flex-col justify-center h-screen px-[10vw] box-border;
   }
+
+  router-outlet + *:has(app-slide-image[data-layout="default"]) {
+    @apply pr-[44vw];
+  }
 }
