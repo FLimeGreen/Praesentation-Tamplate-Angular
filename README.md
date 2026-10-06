@@ -9,10 +9,19 @@ Using this Template it is easy to generate Web Praesentations.
 ## new Praesentation Script
 
 Use this to generate a new Praesentation lokally.
+If you use this script you will still need to install the npm Packages afterwards.
 
 ```bash
 ./neue-praesentation.sh <name> [zielordner]
 ```
+
+## Keys
+
+| Key        | Aktion            |
+| ---------- | ----------------- |
+| f          | Toogle Fullscreen |
+| #          | Toggle Overlay    |
+| Arrow Keys | Navigation        |
 
 ## Development server
 
