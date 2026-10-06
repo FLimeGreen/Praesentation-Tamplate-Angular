@@ -1,0 +1,40 @@
+@if (nav.overviewOpen()) {
+  <div
+    class="fixed inset-0 z-50 overflow-auto bg-bg/95 p-8 backdrop-blur"
+    (click)="nav.close()"
+  >
+    <div class="flex items-start gap-6">
+      @for (group of groups; track $index; let c = $index) {
+        <div class="flex flex-col gap-4">
+          @for (slide of group; track $index; let r = $index) {
+            <button
+              type="button"
+              class="relative shrink-0 cursor-pointer overflow-hidden rounded-lg border-2 bg-bg"
+              [class.border-accent]="isSelected(c, r)"
+              [class.ring-4]="isSelected(c, r)"
+              [class.ring-accent/30]="isSelected(c, r)"
+              [class.border-border]="!isSelected(c, r)"
+              [attr.data-pos]="c + '-' + r"
+              [style.width.px]="thumbW"
+              [style.height.px]="thumbH()"
+              (click)="$event.stopPropagation(); pick(c, r)"
+            >
+              <div
+                class="slide-frame pointer-events-none absolute left-0 top-0 origin-top-left overflow-hidden bg-bg text-text"
+                inert
+                [style.width.px]="vw()"
+                [style.height.px]="vh()"
+                [style.transform]="'scale(' + scale() + ')'"
+              >
+                <ng-container *ngComponentOutlet="slide" />
+              </div>
+              <span class="absolute bottom-1 right-2 rounded bg-surface/90 px-2 text-sm text-muted">
+                {{ number(c, r) }}
+              </span>
+            </button>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}

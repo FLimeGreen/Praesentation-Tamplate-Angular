@@ -47,11 +47,13 @@
 
 /* Jede Folie (direkt nach dem router-outlet) füllt den Bildschirm */
 @layer components {
-  router-outlet + * {
+  router-outlet + *,
+  .slide-frame > * {
     @apply flex flex-col justify-center h-screen px-[10vw] box-border;
   }
 
-  router-outlet + *:has(app-slide-image[data-layout="default"]) {
+  router-outlet + *:has(app-slide-image[data-layout="default"]),
+  .slide-frame > *:has(app-slide-image[data-layout="default"]) {
     @apply pr-[44vw];
   }
 }
