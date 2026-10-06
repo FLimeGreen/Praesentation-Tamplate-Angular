@@ -9,7 +9,7 @@
           @for (slide of group; track $index; let r = $index) {
             <button
               type="button"
-              class="relative shrink-0 cursor-pointer overflow-hidden rounded-lg border-2 bg-bg"
+              class="relative shrink-0 scroll-m-16 cursor-pointer overflow-hidden rounded-lg border-2 bg-bg"
               [class.border-accent]="isSelected(c, r)"
               [class.ring-4]="isSelected(c, r)"
               [class.ring-accent/30]="isSelected(c, r)"
