@@ -57,7 +57,7 @@
     @apply pr-[44vw];
   }
 
-  app-bulletpoint + app-bulletpoint {
+  app-bulletpoint + app-bulletpoint > li {
     @apply mt-3;
   }
 }
