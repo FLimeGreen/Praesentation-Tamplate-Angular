@@ -56,4 +56,8 @@
   .slide-frame > *:has(app-slide-image[data-layout="default"]) {
     @apply pr-[44vw];
   }
+
+  app-bulletpoint + app-bulletpoint {
+    @apply mt-3;
+  }
 }
