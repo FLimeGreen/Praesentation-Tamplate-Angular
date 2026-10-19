@@ -28,6 +28,12 @@ export class App {
       return;
     }
 
+    if (e.key === 'p' || e.key === 'P') {
+      const v = document.querySelector('video');
+      if (v) v.paused ? v.play() : v.pause();
+      return;
+    }
+
     if (this.nav.overviewOpen()) {
       this.onOverviewKey(e);
       return;
