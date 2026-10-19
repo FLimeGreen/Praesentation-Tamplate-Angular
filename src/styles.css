@@ -52,8 +52,8 @@
     @apply flex flex-col justify-center h-screen px-[10vw] box-border;
   }
 
-  router-outlet + *:has(:is(app-slide-image, app-slide-video)[data-layout="default"]),
-  .slide-frame > *:has(:is(app-slide-image, app-slide-video)[data-layout="default"]) {
+  router-outlet + *:has(:is(app-slide-image, app-slide-video, app-slide-html)[data-layout="default"]),
+    .slide-frame > *:has(:is(app-slide-image, app-slide-video, app-slide-html)[data-layout="default"]) {
     @apply pr-[44vw];
   }
 

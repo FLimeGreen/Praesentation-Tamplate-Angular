@@ -1,0 +1,32 @@
+<figure
+  style="position: fixed"
+  class="m-0 flex gap-3"
+  [class.flex-col]="!headingBelow()"
+  [class.flex-col-reverse]="headingBelow()"
+  [style.left.%]="x() ?? 60"
+  [style.top.%]="y() ?? 7.5"
+  [style.width.%]="width() ?? 40"
+  [style.height.%]="height() ?? 85"
+>
+  <div
+    class="empty:hidden [&>*]:m-0"
+    [class.text-right]="!custom()"
+    [class.text-center]="custom()"
+  >
+    <ng-content select="[heading]" />
+  </div>
+
+  <div #box class="relative min-h-0 w-full flex-1 overflow-hidden rounded-lg bg-white drop-shadow-2xl">
+    <iframe
+      #frame
+      [src]="url()"
+      [title]="alt()"
+      class="absolute left-0 top-0 origin-top-left border-0"
+      [class.pointer-events-none]="!interactive()"
+      [style.width.px]="frameW()"
+      [style.height.px]="frameH()"
+      [style.transform]="'scale(' + scale() + ')'"
+      (load)="forwardKeys(frame)"
+    ></iframe>
+  </div>
+</figure>
